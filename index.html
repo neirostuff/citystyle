@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Open Graph -->
+  <title>Загородный стиль — Производство мебели на заказ, садово-парковой мебели и товаров для бань</title>
+  <meta name="description" content="Индивидуальное проектирование и изготовление корпусной мебели, долговечной садово-парковой мебели и внутренней отделки для бань и саун. Точные инженерные расчеты и подбор материалов.">
+  
+  <meta property="og:title" content="Загородный стиль — Производство мебели на заказ">
+  <meta property="og:description" content="Индивидуальное изготовление корпусной, садово-парковой и банной мебели по вашим размерам.">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon (Inline SVG) -->
+  <link class="favicon" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b130f'/%3E%3Cpath d='M30 75 V40 L50 25 L70 40 V75 M30 55 H70' fill='none' stroke='%23d4a373' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='50' cy='50' r='6' fill='%23d4a373'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Onest:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS RESET & VARIABLES */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-dark: #0b130f;
+      --bg-card: #121e18;
+      --bg-card-hover: #192b22;
+      --accent: #d4a373;
+      --accent-hover: #c39262;
+      --accent-glow: rgba(212, 163, 115, 0.15);
+      --text-primary: #f4f1de;
+      --text-secondary: #a9b5ae;
+      --border: rgba(244, 241, 222, 0.08);
+      --border-active: rgba(214, 163, 115, 0.4);
+      --font-title: 'Manrope', sans-serif;
+      --font-body: 'Onest', sans-serif;
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --container-padding: 1.5rem;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: var(--font-body);
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4 {
+      font-family: var(--font-title);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    /* LAYOUT CONTAINER */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: var(--container-padding);
+      padding-right: var(--container-padding);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.8rem;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: var(--bg-dark);
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      border-color: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(244, 241, 222, 0.05);
+      border-color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+
+    /* HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background-color: rgba(11, 19, 15, 0.8);
+      transition: var(--transition);
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.03em;
+    }
+
+    .logo svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--accent);
+    }
+
+    .nav {
+      display: none;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    .header-cta {
+      display: none;
+    }
+
+    /* MENU MOBILE BUTTON */
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 110;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-primary);
+      transition: var(--transition);
+      transform-origin: left center;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+
+    /* MOBILE NAVIGATION OVERLAY */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--bg-dark);
+      z-index: 105;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-link {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .mobile-nav-link:hover {
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      padding-top: 160px;
+      padding-bottom: 80px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Background Gradients */
+    .hero-glow {
+      position: absolute;
+      top: -10%;
+      right: -10%;
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(circle, rgba(212, 163, 115, 0.08) 0%, rgba(11, 19, 15, 0) 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      bottom: -10%;
+      left: -10%;
+      width: 50%;
+      height: 50%;
+      background: radial-gradient(circle, rgba(22, 38, 31, 0.4) 0%, rgba(11, 19, 15, 0) 75%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      background-color: rgba(212, 163, 115, 0.08);
+      border: 1px solid rgba(212, 163, 115, 0.2);
+      color: var(--accent);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      line-height: 1.15;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      color: var(--text-secondary);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* Hero SVG Graphic */
+    .hero-graphic {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-svg {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    }
+
+    /* ANIMATIONS FOR SVG (Blueprint drawing effect) */
+    .blueprint-line {
+      stroke-dasharray: 800;
+      stroke-dashoffset: 800;
+      animation: drawLine 3s ease-out forwards;
+    }
+
+    .blueprint-grid {
+      opacity: 0.15;
+      stroke: var(--text-secondary);
+    }
+
+    @keyframes drawLine {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* SECTION BASICS */
+    .section {
+      padding: 100px 0;
+      position: relative;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      max-width: 600px;
+      margin-bottom: 4.5rem;
+    }
+
+    .section-tag {
+      color: var(--accent);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* SERVICES (DIRECTIONS) SECTION */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .service-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 420px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      background-color: var(--bg-card-hover);
+      border-color: var(--border-active);
+      transform: translateY(-5px);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-graphic-wrap {
+      width: 100%;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      background-color: rgba(11, 19, 15, 0.4);
+      border-radius: 8px;
+      border: 1px solid rgba(244, 241, 222, 0.03);
+      padding: 1rem;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-graphic-wrap {
+      background-color: rgba(11, 19, 15, 0.7);
+      border-color: rgba(212, 163, 115, 0.15);
+    }
+
+    .service-svg {
+      width: 100%;
+      height: 100%;
+      max-height: 140px;
+    }
+
+    .service-svg path,
+    .service-svg line,
+    .service-svg rect,
+    .service-svg circle {
+      stroke: var(--text-secondary);
+      stroke-width: 1.2;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-svg path,
+    .service-card:hover .service-svg line,
+    .service-card:hover .service-svg rect,
+    .service-card:hover .service-svg circle {
+      stroke: var(--accent);
+    }
+
+    .service-card:hover .service-svg .dimmed-line {
+      stroke: rgba(212, 163, 115, 0.3);
+    }
+
+    .service-svg .dimmed-line {
+      stroke: rgba(169, 181, 174, 0.2);
+    }
+
+    .service-svg .dimension-text {
+      font-family: var(--font-title);
+      font-size: 8px;
+      fill: var(--text-secondary);
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-svg .dimension-text {
+      fill: var(--accent);
+    }
+
+    .service-info h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .service-info p {
+      font-size: 0.95rem;
+    }
+
+    /* MATERIALS SECTION */
+    .materials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .material-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .material-card:hover {
+      border-color: var(--border-active);
+    }
+
+    .material-head {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .material-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background-color: rgba(212, 163, 115, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(212, 163, 115, 0.15);
+    }
+
+    .material-icon-wrap svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--accent);
+      fill: none;
+    }
+
+    .material-head h3 {
+      font-size: 1.25rem;
+    }
+
+    .material-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .material-list li {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .material-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65rem;
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent);
+      border-radius: 50%;
+    }
+
+    .material-list strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* PROCESS SECTION */
+    .process-timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background-color: var(--border);
+      z-index: 1;
+    }
+
+    .process-item {
+      position: relative;
+      display: flex;
+      gap: 2rem;
+      z-index: 2;
+    }
+
+    .process-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-color: var(--bg-dark);
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 8px var(--bg-dark);
+    }
+
+    .process-content {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
+      width: 100%;
+      transition: var(--transition);
+    }
+
+    .process-item:hover .process-content {
+      border-color: var(--border-active);
+      background-color: var(--bg-card-hover);
+    }
+
+    .process-content h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .process-content p {
+      font-size: 0.95rem;
+    }
+
+    /* ABOUT SECTION (NEUTRAL AND FACTUAL) */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .about-text {
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .about-highlight {
+      border-left: 3px solid var(--accent);
+      padding-left: 1.5rem;
+      font-style: italic;
+      color: var(--text-primary);
+    }
+
+    .about-graphic {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-pattern-svg {
+      width: 100%;
+      max-width: 320px;
+      opacity: 0.4;
+    }
+
+    .about-pattern-svg path {
+      stroke: var(--accent);
+      stroke-width: 1;
+      fill: none;
+    }
+
+    /* FAQ SECTION (ACCORDION) */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: var(--border-active);
+    }
+
+    .faq-header {
+      width: 100%;
+      padding: 1.5rem 2rem;
+      background: transparent;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-title);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      gap: 1rem;
+    }
+
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent);
+      fill: none;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .faq-content {
+      padding: 0 2rem 1.5rem 2rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      border-top: 1px solid transparent;
+    }
+
+    .faq-item.active .faq-body {
+      max-height: 300px; /* Достаточно для текста */
+    }
+
+    /* CONTACTS SECTION */
+    .contacts-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .contacts-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .contact-icon-wrap {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      background-color: rgba(212, 163, 115, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(212, 163, 115, 0.15);
+      flex-shrink: 0;
+    }
+
+    .contact-icon-wrap svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--accent);
+      fill: none;
+    }
+
+    .contact-detail h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-detail p,
+    .contact-detail a {
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-family: var(--font-title);
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .contact-detail a:hover {
+      color: var(--accent);
+    }
+
+    .contact-detail span {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+      margin-top: 0.25rem;
+      font-family: var(--font-body);
+    }
+
+    .contacts-actions {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .contacts-actions h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contacts-actions p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .contacts-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      background-color: rgba(11, 19, 15, 0.5);
+    }
+
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-link {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-link:hover {
+      color: var(--accent);
+    }
+
+    /* FIXED MOBILE CTA PANEL */
+    .mobile-cta-panel {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(11, 19, 15, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      display: flex;
+      gap: 0.75rem;
+      z-index: 99;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mobile-cta-panel.visible {
+      transform: translateY(0);
+    }
+
+    .mobile-cta-panel .btn {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      border-radius: 6px;
+    }
+
+    .mobile-cta-panel .btn-whatsapp {
+      background-color: #25d366;
+      border-color: #25d366;
+      color: #fff;
+    }
+
+    /* ANIMATIONS ON SCROLL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (min-width: 576px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+      .hero-actions {
+        flex-direction: row;
+      }
+      .contacts-buttons {
+        flex-direction: row;
+      }
+      .contacts-buttons .btn {
+        flex: 1;
+      }
+    }
+
+    @media (min-width: 768px) {
+      :root {
+        --container-padding: 3rem;
+      }
+      .section-title {
+        font-size: 2.5rem;
+      }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .materials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .contacts-container {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-container {
+        flex-direction: row;
+        text-align: left;
+      }
+      .mobile-cta-panel {
+        display: none;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .nav {
+        display: block;
+      }
+      .menu-toggle {
+        display: none;
+      }
+      .header-cta {
+        display: inline-flex;
+      }
+      .hero-container {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+      .hero-title {
+        font-size: 3.5rem;
+      }
+      .materials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .about-wrap {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+      .process-timeline {
+        flex-direction: row;
+        gap: 1.5rem;
+      }
+      .process-timeline::before {
+        left: 20px;
+        right: 20px;
+        top: 20px;
+        bottom: auto;
+        width: auto;
+        height: 2px;
+      }
+      .process-item {
+        flex-direction: column;
+        flex: 1;
+        gap: 1rem;
+      }
+      .process-number {
+        align-self: flex-start;
+      }
+      .process-content {
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor">
+          <path d="M30 75 V40 L50 25 L70 40 V75 M30 55 H70" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="50" cy="50" r="6"/>
+        </svg>
+        <span>Загородный стиль</span>
+      </a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#services" class="nav-link">Направления</a></li>
+          <li><a href="#materials" class="nav-link">Материалы</a></li>
+          <li><a href="#process" class="nav-link">Как мы работаем</a></li>
+          <li><a href="#about" class="nav-link">О компании</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:+79045440855" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          8 904 544 08 55
+        </a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" class="mobile-nav-link">Направления</a>
+    <a href="#materials" class="mobile-nav-link">Материалы</a>
+    <a href="#process" class="mobile-nav-link">Как мы работаем</a>
+    <a href="#about" class="mobile-nav-link">О компании</a>
+    <a href="#faq" class="mobile-nav-link">FAQ</a>
+    <a href="tel:+79045440855" class="btn btn-primary" style="margin-top: 1rem;">
+      Позвонить
+    </a>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
+    <div class="container hero-container">
+      <div class="hero-content reveal">
+        <span class="hero-tag">Мебельное производство</span>
+        <h1 class="hero-title">Индивидуальные решения <span>для загородного уюта</span> и дома</h1>
+        <p class="hero-description">Проектируем и изготавливаем корпусную мебель, износостойкую садово-парковую мебель и высококлассные изделия для бань и саун. Строго по вашим размерам и под условия эксплуатации.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/79045440855?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D0%B8." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.59 2.038 14.105.99 11.488.991c-5.43 0-9.852 4.367-9.857 9.796-.002 1.873.497 3.7 1.447 5.288L2.046 20l4.601-1.206zM20.521 16.481c-.324-.162-1.92-.949-2.216-1.057-.297-.108-.513-.162-.73.162-.216.324-.838 1.056-1.027 1.272-.19.216-.379.243-.703.08-1.782-.89-2.95-1.579-3.929-3.256-.258-.444.258-.412.738-1.372.081-.162.041-.304-.02-.466-.061-.162-.513-1.236-.703-1.696-.185-.445-.373-.385-.513-.392-.132-.007-.284-.008-.436-.008-.152 0-.401.057-.611.284-.21.227-.8.781-.8 1.905 0 1.125.82 2.21 1.057 2.53.237.324 1.624 2.48 3.935 3.477.55.237 1.08.378 1.451.493.551.176 1.052.151 1.448.092.44-.066 1.353-.553 1.542-1.087.189-.533.189-.99.132-1.087-.057-.097-.216-.152-.54-.314z"/></svg>
+            Обсудить в WhatsApp
+          </a>
+          <a href="tel:+79045440855" class="btn btn-secondary">
+            Позвонить
+          </a>
+        </div>
+      </div>
+      <div class="hero-graphic reveal" style="transition-delay: 0.2s;">
+        <!-- Blueprint SVG -->
+        <svg class="hero-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Сетка чертежа -->
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(244, 241, 222, 0.03)" stroke-width="1"/>
+            <path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(244, 241, 222, 0.015)" stroke-width="0.5"/>
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+          
+          <!-- Круги перспективной сетки -->
+          <circle cx="250" cy="250" r="180" stroke="rgba(244, 241, 222, 0.02)" stroke-width="1" stroke-dasharray="4 8" />
+          <circle cx="250" cy="250" r="120" stroke="rgba(244, 241, 222, 0.03)" stroke-width="1" />
+          
+          <!-- Отрезки чертежной геометрии -->
+          <line x1="50" y1="250" x2="450" y2="250" stroke="rgba(244, 241, 222, 0.03)" stroke-width="1" />
+          <line x1="250" y1="50" x2="250" y2="450" stroke="rgba(244, 241, 222, 0.03)" stroke-width="1" />
+          
+          <!-- Изометрический чертеж стола / мебели -->
+          <g class="blueprint-line">
+            <!-- Столешница верх -->
+            <path d="M150 190 L350 190 L380 230 L180 230 Z" stroke="var(--accent)" stroke-width="2" fill="none" />
+            <!-- Столешница толщина -->
+            <path d="M150 190 L150 200 L180 240 L380 240 L380 230 M180 230 L180 240" stroke="var(--accent)" stroke-width="2" fill="none" />
+            
+            <!-- Ножка 1 -->
+            <path d="M170 238 L170 380 L190 380 L190 239" stroke="var(--accent)" stroke-width="1.5" fill="none" />
+            <!-- Ножка 2 -->
+            <path d="M340 238 L340 380 L360 380 L360 232" stroke="var(--accent)" stroke-width="1.5" fill="none" />
+            <!-- Ножка 3 (перспектива) -->
+            <path d="M185 200 L185 300 L200 300 L200 200" stroke="var(--accent)" stroke-width="1" opacity="0.5" fill="none" />
+            <!-- Ножка 4 (перспектива) -->
+            <path d="M320 200 L320 300 L335 300 L335 200" stroke="var(--accent)" stroke-width="1" opacity="0.5" fill="none" />
+            
+            <!-- Перекладины опорные -->
+            <path d="M170 340 L360 340 M170 350 L360 350" stroke="var(--accent)" stroke-width="1" fill="none" />
+          </g>
+
+          <!-- Выносные размерные линии -->
+          <g class="blueprint-dimensions" opacity="0.7">
+            <!-- Длина L=1800 -->
+            <line x1="150" y1="170" x2="350" y2="170" stroke="var(--text-secondary)" stroke-width="1" stroke-dasharray="2 2" />
+            <path d="M150 165 L150 175 M350 165 L350 175" stroke="var(--text-secondary)" stroke-width="1" />
+            <text x="235" y="162" fill="var(--text-secondary)" font-family="var(--font-title)" font-size="11" font-weight="500">L = 1800</text>
+            
+            <!-- Высота H=750 -->
+            <line x1="390" y1="230" x2="390" y2="380" stroke="var(--text-secondary)" stroke-width="1" stroke-dasharray="2 2" />
+            <path d="M385 230 L395 230 M385 380 L395 380" stroke="var(--text-secondary)" stroke-width="1" />
+            <text x="400" y="310" fill="var(--text-secondary)" font-family="var(--font-title)" font-size="11" font-weight="500">H = 750</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECTIONS SECTION -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Сферы деятельности</span>
+        <h2 class="section-title">Направления проектирования и производства</h2>
+      </div>
+      <div class="services-grid">
+        
+        <!-- CARD 1 -->
+        <div class="service-card reveal">
+          <div class="service-graphic-wrap">
+            <svg class="service-svg" viewBox="0 0 200 120">
+              <!-- Чертеж кухни/шкафа -->
+              <rect x="30" y="10" width="140" height="100" fill="none" class="dimmed-line" />
+              <!-- Секции шкафа -->
+              <line x1="75" y1="10" x2="75" y2="110" />
+              <line x1="120" y1="10" x2="120" y2="110" />
+              <!-- Полки -->
+              <line x1="30" y1="40" x2="75" y2="40" />
+              <line x1="30" y1="75" x2="75" y2="75" />
+              <!-- Ящики -->
+              <rect x="79" y="15" width="37" height="25" fill="none" />
+              <circle cx="97.5" cy="27.5" r="2" />
+              <rect x="79" y="45" width="37" height="25" fill="none" />
+              <circle cx="97.5" cy="57.5" r="2" />
+              <rect x="79" y="75" width="37" height="30" fill="none" />
+              <circle cx="97.5" cy="90.5" r="2" />
+              <!-- Выносной размер -->
+              <line x1="20" y1="10" x2="20" y2="110" stroke-dasharray="2 2" />
+              <path d="M17 10 L23 10 M17 110 L23 110" />
+              <text x="8" y="65" class="dimension-text" transform="rotate(-90 8 65)">h 2400</text>
+            </svg>
+          </div>
+          <div class="service-info">
+            <h3>Мебель на заказ</h3>
+            <p>Проектирование кухонных гарнитуров, встроенных шкафов-купе, гардеробных систем и сложных мебельных комплексов. Точно встраиваем в помещения с любой конфигурацией стен и коммуникаций.</p>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="service-card reveal" style="transition-delay: 0.1s;">
+          <div class="service-graphic-wrap">
+            <svg class="service-svg" viewBox="0 0 200 120">
+              <!-- Чертеж парковой лавки -->
+              <!-- Ножки Х-образные -->
+              <line x1="45" y1="40" x2="75" y2="100" />
+              <line x1="75" y1="40" x2="45" y2="100" />
+              <line x1="125" y1="40" x2="155" y2="100" />
+              <line x1="155" y1="40" x2="125" y2="100" />
+              <!-- Спинка каркас -->
+              <line x1="40" y1="15" x2="40" y2="60" />
+              <line x1="160" y1="15" x2="160" y2="60" />
+              <!-- Планки сидения -->
+              <rect x="35" y="40" width="130" height="8" rx="2" fill="none" />
+              <rect x="35" y="52" width="130" height="8" rx="2" fill="none" />
+              <!-- Планки спинки -->
+              <rect x="35" y="15" width="130" height="8" rx="2" fill="none" />
+              <rect x="35" y="27" width="130" height="8" rx="2" fill="none" />
+              <!-- Стяжка ножек -->
+              <line x1="60" y1="70" x2="140" y2="70" />
+              <!-- Выносы размеров -->
+              <line x1="35" y1="112" x2="165" y2="112" stroke-dasharray="2 2" />
+              <text x="90" y="119" class="dimension-text">w 1600</text>
+            </svg>
+          </div>
+          <div class="service-info">
+            <h3>Садово-парковая мебель</h3>
+            <p>Долговечные обеденные группы для террас, уличные скамьи, прочные перголы и беседки из сибирской лиственницы или термососны. Разработаны для круглогодичной эксплуатации на открытом воздухе.</p>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="service-card reveal" style="transition-delay: 0.2s;">
+          <div class="service-graphic-wrap">
+            <svg class="service-svg" viewBox="0 0 200 120">
+              <!-- Схема многоуровневого полка сауны -->
+              <!-- Ступень 1 -->
+              <rect x="40" y="80" width="120" height="25" fill="none" />
+              <!-- Ступень 2 -->
+              <rect x="40" y="45" width="120" height="35" fill="none" />
+              <!-- Каркас опоры -->
+              <line x1="40" y1="45" x2="40" y2="105" />
+              <line x1="160" y1="45" x2="160" y2="105" />
+              <line x1="100" y1="45" x2="100" y2="105" class="dimmed-line" />
+              <!-- Декоративный банный ушат/аксессуар сбоку -->
+              <path d="M15 80 L25 80 L27 100 L13 100 Z" fill="none" />
+              <line x1="13" y1="85" x2="27" y2="85" />
+              <line x1="13" y1="95" x2="27" y2="95" />
+              <path d="M20 80 V70" stroke-width="1.5" />
+              <!-- Вынос высоты -->
+              <line x1="172" y1="45" x2="172" y2="105" stroke-dasharray="2 2" />
+              <path d="M169 45 L175 45 M169 105 L175 105" />
+              <text x="178" y="80" class="dimension-text">h 900</text>
+            </svg>
+          </div>
+          <div class="service-info">
+            <h3>Товары для бань и саун</h3>
+            <p>Обустройство парных зон: эргономичные полки, прочные лавки, подголовники, трапы и двери. Изготавливаются из отборных сортов липы и осины, устойчивых к критическому нагреву и смолотечению.</p>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="service-card reveal" style="transition-delay: 0.3s;">
+          <div class="service-graphic-wrap">
+            <svg class="service-svg" viewBox="0 0 200 120">
+              <!-- Схема современного комода / корпусной мебели -->
+              <rect x="40" y="20" width="120" height="75" fill="none" />
+              <!-- Фасады выдвижных ящиков -->
+              <rect x="44" y="24" width="112" height="20" fill="none" />
+              <line x1="90" y1="34" x2="110" y2="34" stroke-width="2" />
+              
+              <rect x="44" y="48" width="112" height="20" fill="none" />
+              <line x1="90" y1="58" x2="110" y2="58" stroke-width="2" />
+              
+              <rect x="44" y="72" width="112" height="20" fill="none" />
+              <line x1="90" y1="82" x2="110" y2="82" stroke-width="2" />
+              
+              <!-- Разметка осей -->
+              <line x1="40" y1="57.5" x2="160" y2="57.5" stroke-dasharray="3 3" class="dimmed-line" />
+              <line x1="100" y1="20" x2="100" y2="95" stroke-dasharray="3 3" class="dimmed-line" />
+            </svg>
+          </div>
+          <div class="service-info">
+            <h3>Корпусная мебель</h3>
+            <p>Изготовление современных комодов, функциональных прихожих, тумб под ТВ, книжных шкафов и рабочих зон. Применяем качественную кромку PUR для надежной защиты от влаги на долгие годы.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALS & TECHNOLOGIES -->
+  <section class="section" id="materials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Качество и долговечность</span>
+        <h2 class="section-title">Материалы и конструктивные решения</h2>
+      </div>
+      <div class="materials-grid">
+        
+        <!-- CARD 1 -->
+        <div class="material-card reveal">
+          <div class="material-head">
+            <div class="material-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Для уличных условий</h3>
+          </div>
+          <ul class="material-list">
+            <li><strong>Лиственница и термососна:</strong> Основа конструкций, не подверженная гниению.</li>
+            <li><strong>Влагостойкие пропитки:</strong> Масла глубокого проникновения защищают от УФ-лучей и рассыхания.</li>
+            <li><strong>Нержавеющий крепеж:</strong> Предотвращает появление ржавых подтеков на стыках дерева.</li>
+          </ul>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="material-card reveal" style="transition-delay: 0.1s;">
+          <div class="material-head">
+            <div class="material-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 3v18M3 12h18" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Для бань и парных</h3>
+          </div>
+          <ul class="material-list">
+            <li><strong>Отборная липа и осина:</strong> Породы без смолы, безопасны при температурах выше 100°C.</li>
+            <li><strong>Низкая теплопроводность:</strong> Поверхность полков не перегревается, защищая от ожогов.</li>
+            <li><strong>Вентилируемая сборка:</strong> Каркасы собираются с технологическими зазорами для слива воды и просушки.</li>
+          </ul>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="material-card reveal" style="transition-delay: 0.2s;">
+          <div class="material-head">
+            <div class="material-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M3 3h18v18H3z" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Корпусная мебель</h3>
+          </div>
+          <ul class="material-list">
+            <li><strong>PUR-кромление деталей:</strong> Защищает торцы плит ЛДСП и МДФ от проникновения пара и воды.</li>
+            <li><strong>Плотный крепеж:</strong> Сборка на эксцентриковые стяжки и евровинты без видимых заглушек на фасадах.</li>
+            <li><strong>Проверенная фурнитура:</strong> Петли с доводчиками и направляющие плавного закрывания.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS SECTION -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Прозрачные этапы</span>
+        <h2 class="section-title">Как строится работа над проектом</h2>
+      </div>
+      <div class="process-timeline">
+        
+        <!-- STEP 1 -->
+        <div class="process-item reveal">
+          <div class="process-number">01</div>
+          <div class="process-content">
+            <h3>Заявка и расчет</h3>
+            <p>Вы связываетесь с нами по телефону или в мессенджере. Обсуждаем габариты, назначение и ваши пожелания, после чего рассчитываем ориентировочный бюджет.</p>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="process-item reveal" style="transition-delay: 0.1s;">
+          <div class="process-number">02</div>
+          <div class="process-content">
+            <h3>Выезд на замер и эскиз</h3>
+            <p>Проводим детальный замер на месте с учетом особенностей помещения, перепадов стен и выводов коммуникаций. Создаем точный эскиз изделия.</p>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="process-item reveal" style="transition-delay: 0.2s;">
+          <div class="process-number">03</div>
+          <div class="process-content">
+            <h3>Производство</h3>
+            <p>Изготавливаем детали по чертежам на специализированном оборудовании, проводим тестовую сборку элементов конструкции и контроль качества деталей.</p>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="process-item reveal" style="transition-delay: 0.3s;">
+          <div class="process-number">04</div>
+          <div class="process-content">
+            <h3>Доставка и монтаж</h3>
+            <p>Аккуратно транспортируем готовую мебель к вам, осуществляем сборку нашими силами, проверяем работу фурнитуры и сдаем готовый результат.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION (NEUTRAL AND TRUTHFUL) -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">О производстве</span>
+        <h2 class="section-title">Принципы работы «Загородного стиля»</h2>
+      </div>
+      <div class="about-wrap">
+        <div class="about-content reveal">
+          <p class="about-text">
+            Мебельное производство «Загородный стиль» специализируется на проектировании и изготовлении изделий под конкретные условия эксплуатации. Мы разрабатываем и производим мебель как для благоустроенных помещений (кухни, шкафы, прихожие), так и для специфических зон — открытых уличных террас и влажной среды бань или саун.
+          </p>
+          <div class="about-highlight">
+            Мы не используем потоковый конвейерный метод. Каждое изделие проектируется индивидуально, исходя из геометрии места установки, температурного режима и планируемой интенсивности нагрузок.
+          </div>
+          <p class="about-text">
+            Применяемый нами подход позволяет заранее учесть поведение натуральной древесины во влажных средах, защитить торцы корпусной мебели от разбухания с помощью PUR-кромки и подобрать фурнитуру с высоким ресурсом работы.
+          </p>
+        </div>
+        <div class="about-graphic reveal" style="transition-delay: 0.2s;">
+          <!-- SVG Wood Ring Pattern -->
+          <svg class="about-pattern-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="95" stroke-dasharray="1 3" />
+            <circle cx="100" cy="100" r="85" />
+            <circle cx="100" cy="100" r="75" stroke-dasharray="5 3" />
+            <circle cx="100" cy="100" r="65" />
+            <circle cx="100" cy="100" r="55" />
+            <circle cx="100" cy="100" r="45" stroke-dasharray="2 2" />
+            <circle cx="100" cy="100" r="35" />
+            <circle cx="100" cy="100" r="25" />
+            <circle cx="100" cy="100" r="15" stroke-dasharray="1 1" />
+            <circle cx="100" cy="100" r="5" />
+            <!-- Срез трещины как на дереве -->
+            <path d="M100 100 L170 150" stroke-width="1.5" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center; margin-left: auto; margin-right: auto;">
+        <span class="section-tag">Вопросы и ответы</span>
+        <h2 class="section-title">Часто задаваемые вопросы</h2>
+      </div>
+      <div class="faq-list">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item reveal">
+          <button class="faq-header">
+            <span>Каковы сроки изготовления мебели?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              Сроки зависят от масштаба проекта, сложности его конструктива и доступности выбранных материалов на складе. В среднем процесс изготовления занимает от 15 до 30 рабочих дней после согласования технического эскиза.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item reveal" style="transition-delay: 0.1s;">
+          <button class="faq-header">
+            <span>Как рассчитывается точная стоимость?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              Итоговая смета формируется на основании нескольких факторов: общий объем и порода древесины (или тип плитного материала), класс используемой фурнитуры, конструктивная сложность проекта и удаленность адреса для доставки и монтажа. Все цены прописываются до начала работ и остаются неизменными.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item reveal" style="transition-delay: 0.2s;">
+          <button class="faq-header">
+            <span>Можно ли изготовить мебель по моему эскизу или дизайн-проекту?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              Да, мы работаем с готовыми эскизами, техническими чертежами и дизайн-проектами от архитекторов или дизайнеров. Перед запуском в производство наш технолог проверяет все узлы на прочность и соответствие нагрузкам.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item reveal" style="transition-delay: 0.3s;">
+          <button class="faq-header">
+            <span>Почему для бани используется именно липа и осина?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq-body">
+            <div class="faq-content">
+              Эти лиственные породы дерева обладают низкой плотностью и теплопроводностью, благодаря чему полки и лавки в парной не нагреваются до обжигающих температур. Кроме того, липа и осина не содержат смолы, которая при нагреве может привести к ожогам.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS SECTION -->
+  <section class="section" id="contacts">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Связь с нами</span>
+        <h2 class="section-title">Обсудить ваш проект</h2>
+      </div>
+      <div class="contacts-container">
+        
+        <div class="contacts-info reveal">
+          
+          <div class="contact-item">
+            <div class="contact-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="contact-detail">
+              <h4>Телефон для связи</h4>
+              <a href="tel:+79045440855">+7 (904) 544-08-55</a>
+              <span>Звонки принимаются ежедневно</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon-wrap">
+              <!-- Стилизованная гео-метка -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="contact-detail">
+              <h4>Формат работы</h4>
+              <p>Выезд на замеры</p>
+              <span>По предварительной договоренности</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="contacts-actions reveal" style="transition-delay: 0.1s;">
+          <div>
+            <h3>Напишите нам в WhatsApp</h3>
+            <p>Отправьте размеры или готовый эскиз для предварительного расчета стоимости и консультации.</p>
+          </div>
+          <div class="contacts-buttons">
+            <a href="https://wa.me/79045440855?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D0%B8." class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 6px;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.59 2.038 14.105.99 11.488.991c-5.43 0-9.852 4.367-9.857 9.796-.002 1.873.497 3.7 1.447 5.288L2.046 20l4.601-1.206zM20.521 16.481c-.324-.162-1.92-.949-2.216-1.057-.297-.108-.513-.162-.73.162-.216.324-.838 1.056-1.027 1.272-.19.216-.379.243-.703.08-1.782-.89-2.95-1.579-3.929-3.256-.258-.444.258-.412.738-1.372.081-.162.041-.304-.02-.466-.061-.162-.513-1.236-.703-1.696-.185-.445-.373-.385-.513-.392-.132-.007-.284-.008-.436-.008-.152 0-.401.057-.611.284-.21.227-.8.781-.8 1.905 0 1.125.82 2.21 1.057 2.53.237.324 1.624 2.48 3.935 3.477.55.237 1.08.378 1.451.493.551.176 1.052.151 1.448.092.44-.066 1.353-.553 1.542-1.087.189-.533.189-.99.132-1.087-.057-.097-.216-.152-.54-.314z"/></svg>
+              Связаться в WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-copy">
+        &copy; 2026 Производство «Загородный стиль». Все права защищены.
+      </div>
+      <div class="footer-links">
+        <a href="#services" class="footer-link">Направления</a>
+        <a href="#materials" class="footer-link">Материалы</a>
+        <a href="#process" class="footer-link">Процесс</a>
+        <a href="#faq" class="footer-link">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FIXED MOBILE CTA PANEL -->
+  <div class="mobile-cta-panel" id="mobileCtaPanel">
+    <a href="tel:+79045440855" class="btn btn-secondary">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Позвонить
+    </a>
+    <a href="https://wa.me/79045440855?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D0%B8." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+      WhatsApp
+    </a>
+  </div>
+
+  <script>
+    // MOBILE MENU LOGIC
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function toggleMenu() {
+      menuToggle.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // FAQ ACCORDION LOGIC
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const header = item.querySelector('.faq-header');
+      header.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Закрываем все открытые
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-body').style.maxHeight = null;
+        });
+
+        // Открываем кликнутый
+        if (!isActive) {
+          item.classList.add('active');
+          const body = item.querySelector('.faq-body');
+          const content = item.querySelector('.faq-content');
+          body.style.maxHeight = (content.offsetHeight + 30) + 'px';
+        }
+      });
+    });
+
+    // SCROLL REVEAL ANIMATION (IntersectionObserver)
+    const reveals = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); // Анимируем только один раз
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    reveals.forEach(reveal => {
+      revealOnScroll.observe(reveal);
+    });
+
+    // MOBILE CTA PANEL VISIBILITY ON SCROLL
+    const mobileCtaPanel = document.getElementById('mobileCtaPanel');
+    
+    window.addEventListener('scroll', () => {
+      if (window.innerWidth < 768) {
+        // Показываем панель после скролла ниже первого экрана (Hero)
+        if (window.scrollY > 300) {
+          mobileCtaPanel.classList.add('visible');
+        } else {
+          mobileCtaPanel.classList.remove('visible');
+        }
+      } else {
+        mobileCtaPanel.classList.remove('visible');
+      }
+    });
+  </script>
+</body>
+</html>
