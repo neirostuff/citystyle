@@ -3,7 +3,7 @@ name: Deploy citystyle
 on:
   push:
     branches:
-      - основной
+      - main
 
 jobs:
   deploy:
